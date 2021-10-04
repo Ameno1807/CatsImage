@@ -15,7 +15,7 @@ interface ApiService {
     suspend fun getCat(@Path("image_id")id: String): CatsPhoto
 
     @Headers("x-api-key:$API_KEY")
-    @GET("search?&order=desc?mime_types=gif")
+    @GET("search?&order=desc?mime_types=jpg,png")
     suspend fun getCatsList(
         @Query("limit") limit: Int,
         @Query("page") page: Int

@@ -6,4 +6,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "CatsImage"
-include (":app")
+include(":app")

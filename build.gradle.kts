@@ -5,11 +5,11 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath ("com.android.tools.build:gradle:7.0.2")
-        classpath ("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31")
+        classpath("com.android.tools.build:gradle:7.0.2")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31")
 
-        classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5")
-        classpath ("com.google.dagger:hilt-android-gradle-plugin:2.36")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.36")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -25,14 +25,13 @@ subprojects {
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
 }
 
-dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.18.1")
-}
-
 detekt {
     toolVersion = "1.10.0"
     config = files("config/detekt/detekt.yml")
     buildUponDefaultConfig = true
+    failFast = true
+
+    input = files("app/src/main/java", "app/src/main/kotlin")
 
     reports {
         html {
