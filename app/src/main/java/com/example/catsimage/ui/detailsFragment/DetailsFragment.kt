@@ -34,6 +34,8 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 .error(R.drawable.ic_baseline_error_24)
                 .into(image_details)
 
+            textDetails.text = arg.photo.id
+
             appCompatButton.setOnClickListener {
                 val bitmap: Bitmap = binding.imageDetails.drawable.toBitmap()
                 saveImage(photo, bitmap)
